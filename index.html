@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div class="even-columns">
+          <div>
+            <picture>
+              <source
+                class="desktop-image"
+                srcset="./images/bg-main-desktop.png"
+                media="(min-width: 70em)"
+                height="900"
+              />
+              <img
+                src="./images/bg-main-mobile.png"
+                alt="background picture"
+                height="300"
+                width="1100"
+              />
+            </picture>
+            <div class="card-front">
+              <div class="card-container">
+                <svg class="icon" width="60" height="35">
+                  <use xlink:href="./images/cardLogo.svg#card-logo"></use>
+                </svg>
+                <p
+                  class="cardnumber-change | text-neutral-100 fw-semi-bold fs-900"
+                >
+                  0000 0000 0000 0000
+                </p>
+                <div class="flex">
+                  <div>
+                    <p
+                      class="cardholder-change | text-neutral-100 fw-semi-bold fs-300"
+                    >
+                      YOUR NAME
+                    </p>
+                  </div>
+                  <div>
+                    <p
+                      class="carddate-change | text-neutral-100 fw-semi-bold fs-300"
+                    >
+                      00/00
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-back">
+              <p class="cardcvc-change | text-neutral-100 fw-semi-bold fs-500">
+                000
+              </p>
+            </div>
+          </div>
+          <div class="form">
+            <form action="">
+              <div class="padding-block-400">
+                <label
+                  class="text-neutral-900 fs-300 fw-bold"
+                  for="cardholdername"
+                  >CARDHOLDER NAME</label
+                >
+                <input
+                  type="text"
+                  name="cardholdername"
+                  id="cardholdername"
+                  placeholder="e.g Jane Appleseed"
+                  required
+                  class="text-neutral-900 | name-input"
+                />
+                <p class="name-error | text-primary-error fs-300">
+                  Wrong format, letters only!
+                </p>
+              </div>
+
+              <div class="padding-block-400">
+                <label class="text-neutral-900 fs-300 fw-bold" for="cardnumber"
+                  >CARD NUMBER</label
+                >
+                <input
+                  type="text"
+                  name="cardnumber"
+                  id="cardnumber"
+                  placeholder="e.g 1234 5678 9123 0000"
+                  required
+                  class="text-neutral-900 | cardnumber-input"
+                />
+                <p class="number-error | text-primary-error fs-300">
+                  Wrong format, numbers only!
+                </p>
+              </div>
+
+              <div class="padding-block-400">
+                <div class="flex-outer">
+                  <div class="first-outer-flex-item">
+                    <label class="text-neutral-900 fs-300 fw-bold" for="expdate"
+                      >EXP. DATE (MM/YY)</label
+                    >
+                    <div class="flex-inside">
+                      <div class="">
+                        <input
+                          type="text"
+                          name="expdate"
+                          id="month"
+                          placeholder="MM"
+                          required
+                          class="text-neutral-900 | month-input"
+                          data-width="date"
+                        />
+                      </div>
+                      <div>
+                        <input
+                          type="text"
+                          name="expdate"
+                          id="year"
+                          placeholder="YY"
+                          required
+                          class="text-neutral-900 | year-input"
+                          data-width="date"
+                        />
+                      </div>
+                    </div>
+                    <p class="date-error | text-primary-error fs-300">
+                      Not the right date format!
+                    </p>
+                  </div>
+                  <div class="second-outer-flex-item">
+                    <label
+                      class="text-neutral-900 fs-300 fw-bold"
+                      for="cardholdername"
+                      >CVC</label
+                    >
+                    <input
+                      type="text"
+                      name="cvc"
+                      id="cvc"
+                      placeholder="e.g 123"
+                      required
+                      class="text-neutral-900 | cvc-input"
+                      data-cvc="width"
+                    />
+                    <p class="cvc-error | text-primary-error fs-300">
+                      Must type 3 number only!
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="padding-block-600">
+                <button
+                  class="button button-submit | bg-neutral-900 text-neutral-100"
+                  type="submit"
+                >
+                  Confirm
+                </button>
+              </div>
+              <p class="required-error | text-primary-error">
+                Please fill all fields!!
+              </p>
+            </form>
+          </div>
+          <div class="success-state | padding-block-400">
+            <!--import svg tick-->
+            <picture>
+              <source srcset="images/icon-complete.svg" />
+            </picture>
+            <p class="text-neutral-900 fw-bold fs-700">THANK YOU !</p>
+            <p class="text-neutral-600">We've added your card details</p>
+            <button
+              class="button-continue button | bg-neutral-900 text-neutral-100"
+              type="submit"
+            >
+              Continue
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="./main.js"></script>
+  </body>
+</html>

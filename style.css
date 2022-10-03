@@ -1,0 +1,360 @@
+:root {
+  --clr-primary-active-border: linear-gradient(
+    hsl(249, 99%, 64%),
+    hsl(278, 94%, 30%)
+  );
+  --clr-primary-error: hsl(0, 100%, 66%);
+
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-300: hsl(270, 3%, 87%);
+  --clr-neutral-600: hsl(279, 6%, 55%);
+  --clr-neutral-900: hsl(278, 68%, 11%);
+
+  --ff-primary: "Space Grotesk", sans-serif;
+
+  --ff-body: var(--ff-primary);
+  --ff-heading: var(--ff-primary);
+
+  --fw-regular: 400;
+  --fw-semi-bold: 500;
+  --fw-bold: 700;
+
+  --fs-300: 0.7rem;
+  --fs-500: 1.125rem;
+  --fs-700: 1.5rem;
+  --fs-900: 1.75rem;
+
+  --fs-body: var(--fs-500);
+  --fs-primary-heading: var(--fs-700);
+  --fs-button: var(--fs-500);
+  --fs-error: var(--fs-300);
+
+  --size-100: 0.25rem;
+  --size-200: 0.5rem;
+  --size-300: 0.75rem;
+  --size-400: 1rem;
+  --size-500: 1.5rem;
+  --size-600: 2rem;
+  --size-700: 3rem;
+  --size-800: 4rem;
+  --size-900: 5rem;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+.container {
+  --max-width: 1110px;
+  --padding: 1rem;
+
+  width: 100%;
+  margin-inline: auto;
+}
+
+.even-columns {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 70em) {
+  .even-columns {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+
+  picture {
+    max-width: 65%;
+  }
+}
+
+/* styling cvc and expiration date */
+.flex-outer {
+  display: flex;
+  gap: var(--size-400);
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-inside {
+  display: flex;
+  gap: var(--size-200);
+}
+
+.first-outer-flex-item {
+  flex: 5%;
+}
+
+.second-outer-flex-item {
+  flex: 25%;
+}
+
+.number-error {
+  display: none;
+}
+.date-error {
+  display: none;
+  text-align: center;
+}
+.cvc-error {
+  display: none;
+}
+.name-error {
+  display: none;
+}
+
+.required-error {
+  display: none;
+  text-align: center;
+}
+
+.card-front {
+  background-image: url(./images/bg-card-front.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 215px;
+  width: 350px;
+  border-radius: 10px;
+  position: absolute;
+  top: 20%;
+  left: 15%;
+  z-index: 1;
+}
+
+.card-back {
+  background-image: url(./images/bg-card-back.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 215px;
+  width: 350px;
+  border-radius: 10px;
+  position: absolute;
+  top: 5%;
+  left: 27%;
+}
+
+.card-container {
+  padding: 1.5rem 2rem 1.5rem 1.5rem;
+}
+
+.card-back > p {
+  text-align: center;
+  margin-top: 5rem;
+  margin-left: 12.5rem;
+}
+
+.cardnumber-change {
+  padding-top: var(--size-700);
+  padding-bottom: var(--size-300);
+}
+
+@media (min-width: 70em) {
+  .card-back {
+    top: 55%;
+    left: 22%;
+  }
+
+  .card-front {
+    top: 25%;
+    left: 15%;
+  }
+}
+/* styling the card back and front image for medium displays*/
+@media (min-width: 40em) and (max-width: 70em) {
+  .card-back {
+    top: 5%;
+    left: 45%;
+  }
+
+  .card-front {
+    top: 17%;
+    left: 15%;
+  }
+}
+
+.button {
+  padding: var(--size-300);
+  font-size: var(--fs-500);
+  border: 0;
+  border-radius: 5px;
+}
+
+.button-submit {
+  width: 100%;
+}
+
+.button-continue {
+  width: 60%;
+}
+
+input {
+  width: 100%;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: var(--clr-neutral-300);
+  padding: var(--size-100);
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--size-600);
+  width: 100%-1.5rem;
+}
+
+/* style  the success page */
+.success-state {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: var(--size-600);
+  width: 100%;
+  margin-top: 3.5rem;
+}
+
+.success-state > :not(:nth-child(2), :nth-child(4)) {
+  padding-bottom: var(--size-600);
+}
+
+.success-state > :nth-child(2) {
+  padding-bottom: var(--size-200);
+}
+
+@media (min-width: 70em) {
+  .success-state {
+    margin: 0;
+  }
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* utility classes */
+.bg-neutral-900 {
+  background-color: var(--clr-neutral-900);
+}
+
+.bg-primary-active {
+  background-color: var(--clr-primary-active-border);
+}
+
+.text-primary-error {
+  color: var(--clr-primary-error);
+}
+
+.text-neutral-100 {
+  color: var(--clr-neutral-100);
+}
+
+.text-neutral-300 {
+  color: var(--clr-neutral-300);
+}
+
+.text-neutral-600 {
+  color: var(--clr-neutral-600);
+}
+
+.text-neutral-900 {
+  color: var(--clr-neutral-900);
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+
+.fw-semi-bold {
+  font-weight: var(--fw-semi-bold);
+}
+
+.fw-regular {
+  font-weight: var(--fw-regular);
+}
+
+.fs-300 {
+  font-size: var(--fs-300);
+}
+
+.fs-500 {
+  font-size: var(--fs-500);
+}
+
+.fs-700 {
+  font-size: var(--fs-700);
+}
+
+.fs-900 {
+  font-size: var(--fs-900);
+}
+
+.padding-block-600 {
+  padding-block: var(--size-600);
+}
+
+.padding-block-400 {
+  padding-block: var(--size-400);
+}
